@@ -15,6 +15,7 @@ import NodeInfo from './NodeInfo';
 import TemplateModule from './TemplateModule';
 import Transfer from './Transfer';
 import Upgrade from './Upgrade';
+import MultisigTransfer from './MultisigTransfer';
 
 function Main () {
   const [accountAddress, setAccountAddress] = useState(null);
@@ -65,14 +66,15 @@ function Main () {
             <Balances />
           </Grid.Row>
           <Grid.Row>
+            <MultisigTransfer accountPair={accountPair} />
+            <Events />
+          </Grid.Row>
+          <Grid.Row>
             <Transfer accountPair={accountPair} />
             <Upgrade accountPair={accountPair} />
           </Grid.Row>
           <Grid.Row>
             <Interactor accountPair={accountPair} />
-            <Events />
-          </Grid.Row>
-          <Grid.Row>
             <TemplateModule accountPair={accountPair} />
           </Grid.Row>
         </Grid>
